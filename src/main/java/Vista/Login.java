@@ -1,6 +1,9 @@
 
 package Vista;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 public class Login extends javax.swing.JFrame {
 
@@ -8,7 +11,39 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.setVisible(true);
+        
+        this.jButton1.addActionListener(new ActionListener(){
+            
+            
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               
+                ComprobacionUsuario comprobacion = new ComprobacionUsuario(jTextField2.getText(), new String(jPasswordField1.getPassword()));
+                
+                try {
+                    
+                    comprobacion.verificacion();
+                    
+                    jLabel5.setText("Todo Correcto");
+                    
+                } catch (ErrorInputUser ex) {
+                    
+                    jLabel5.setText("Incorrecto usuario o contraseña");
+           
+                } catch (ErrorInputPassword ex) {
+                    jLabel5.setText("Incorrecto usuario o contraseña");
+                }
+                
+                
+                
+            }
+        
+        
+        
+        });
     }
+    
 
   
    
@@ -96,7 +131,6 @@ public class Login extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Inorrecto usuario o contraseña");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -132,7 +166,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18))
         );
@@ -187,6 +221,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
+   
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -195,12 +230,12 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField2;
+    public javax.swing.JPasswordField jPasswordField1;
+    public javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
