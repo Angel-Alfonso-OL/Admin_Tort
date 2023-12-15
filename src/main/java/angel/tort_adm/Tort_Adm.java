@@ -1,16 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
+
 
 package angel.tort_adm;
 
-/**
- *
- * @author angel
- */
+import Vista.Login;
+
 public class Tort_Adm {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        Login a = new Login();
+       
     }
 }
