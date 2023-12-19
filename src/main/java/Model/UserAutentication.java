@@ -1,14 +1,17 @@
 
-package Vista;
+package Model;
 
-public class ComprobacionUsuario {
+import Model.LoginException.ErrorInputUser;
+import Model.LoginException.ErrorInputPassword;
+
+public class UserAutentication {
     
     private final String USER = "Angel";
     private final String PASSWORD = "Angel123";
     private final String inputUser;
     private final String inputPassword;
     
-    public ComprobacionUsuario(String inputUser, String inputPassword){
+    public UserAutentication(String inputUser, String inputPassword){
         
         this.inputUser = inputUser;
         this.inputPassword = inputPassword;
